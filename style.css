@@ -1,0 +1,334 @@
+body {
+  /* background: rgb(183, 164, 163); */
+  background: #f5f2e9;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.collage-title {
+  width: 800px;
+}
+
+.collage {
+  position: relative;
+  width: 1700px;
+  height: 1000px;
+
+  /* background: rgb(248, 235, 225); */
+
+  background-image: url("images/exp.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 2px dashed #3d1704;
+  border-radius: 10px;
+  overflow: visible;
+  /* transition: filter 0.3s ease; */
+}
+
+.collage-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.8s ease-in-out;
+  /* z-index: 1; */
+}
+
+.collage-item {
+  position: absolute;
+  z-index: 10;
+}
+
+.collage.focus-mode .collage-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.collage.focus-mode .collage-item,
+.collage.focus-mode img {
+  filter: brightness(0.5);
+  transition: filter 0.8s ease-in-out;
+}
+
+.collage.focus-mode .active,
+.collage.focus-mode .active img,
+.collage.focus-mode .active .photo,
+.collage.focus-mode .active .it,
+.collage.focus-mode .active .eng,
+.collage.focus-mode .active .visible img {
+  filter: brightness(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+  transition: filter 0.8s ease-in-out;
+}
+
+/*-----------------------------------*/
+
+.camera {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  width: 350px;
+  transform: rotate(-10deg);
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.photo-examples {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+/*-----------------------------------*/
+
+.photo {
+  position: absolute;
+  width: 350px;
+  /* transition: transform 0.3s, opacity 0.3s; */
+  opacity: 0;
+  transform: translateY(20px); /* начальное смещение для анимации */
+  animation: slideUp 0.5s forwards; /* назначаем анимацию */
+}
+
+.d-frame {
+  --rotate: -40deg;
+}
+.v-frame {
+  --rotate: -10deg;
+}
+.sky-frame {
+  --rotate: 20deg;
+}
+
+.d-frame {
+  top: 10px;
+  left: -150px;
+  transform: rotate(-40deg);
+  animation: slideUp 0.5s forwards;
+  animation-delay: 0s;
+}
+.v-frame {
+  top: -140px;
+  left: 90px;
+  transform: rotate(-10deg);
+  animation: slideUp 0.5s forwards;
+  animation-delay: 0.2s;
+}
+.sky-frame {
+  top: -70px;
+  left: 340px;
+  transform: rotate(20deg);
+  animation: slideUp 0.5s forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotate(var(--rotate));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotate));
+  }
+}
+
+/* скрытые элементы */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*-----------------------------------*/
+
+.comicguy {
+  height: auto;
+  width: 280px;
+
+  position: absolute;
+  top: 480px;
+  left: 200px;
+
+  cursor: pointer;
+  z-index: 10;
+
+  --rotate-angle: 0deg;
+  transform: rotate(var(--rotate-angle));
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comicguy.clicked {
+  --rotate-angle: 20deg;
+  width: 400px;
+}
+
+.it-examples {
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.it {
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: slideUp 0.5s forwards;
+}
+
+.business {
+  --rotate: -20deg;
+
+  top: 450px;
+  left: 10px;
+
+  transform: rotate(var(--rotate));
+  animation-delay: 0s;
+}
+.moviesearch {
+  --rotate: -30deg;
+
+  top: 650px;
+  left: 70px;
+
+  transform: rotate(var(--rotate));
+  animation-delay: 0.2s;
+}
+.vegetables {
+  --rotate: 30deg;
+
+  top: 430px;
+  left: 490px;
+
+  transform: rotate(var(--rotate));
+  animation-delay: 0.4s;
+}
+
+.gallery {
+  --rotate: 30deg;
+
+  top: 700px;
+  left: 450px;
+
+  transform: rotate(var(--rotate));
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotate(var(--rotate));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotate));
+  }
+}
+
+/*-----------------------------------*/
+
+/* .sunflower {
+  position: absolute;
+  top: -25px;
+  right: 500px;
+} */
+
+/*-----------------------------------*/
+
+.justin {
+  position: absolute;
+  top: 560px;
+  right: 550px;
+  width: 400px;
+  transform: rotate(-10deg);
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.eng-examples {
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.eng {
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: slideUp 0.5s forwards;
+}
+
+.inst {
+  --rotate: 25deg;
+
+  top: 490px;
+  right: 490px;
+
+  width: 200px;
+
+  transform: rotate(var(--rotate));
+  animation-delay: 0.2s;
+}
+
+.presentation {
+  top: 680px;
+  right: 800px;
+
+  --rotate: -40deg;
+  transform: rotate(var(--rotate));
+  animation-delay: 0.4s;
+}
+
+.british {
+  --rotate: -15deg;
+  transform: rotate(var(--rotate));
+
+  width: 200px;
+
+  top: 420px;
+  right: 710px;
+  animation-delay: 0s;
+}
+
+/*-----------------------------------*/
+
+.collage-item {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collage-item:hover {
+  transform: scale(1.2);
+}
+
+.it-examples img:hover {
+  width: 350px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/*-----------------------------------*/
+
+.friendly {
+  width: 310px;
+  right: 260px;
+  top: 220px;
+
+  cursor: pointer;
+  z-index: 10;
+}
