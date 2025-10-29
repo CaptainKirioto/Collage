@@ -29,6 +29,10 @@ body {
   border-radius: 10px;
   overflow: visible;
   /* transition: filter 0.3s ease; */
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .collage-overlay {
@@ -331,4 +335,149 @@ body {
 
   cursor: pointer;
   z-index: 10;
+}
+
+.friendly-examples {
+  position: relative;
+  z-index: 9;
+  transition: opacity 0.3s ease;
+}
+
+.friend {
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: slideUp 0.5s forwards;
+}
+
+.sport {
+  --rotate: 15deg;
+  transform: rotate(var(--rotate));
+  top: 100px;
+  right: 150px;
+}
+
+.aiders {
+  --rotate: -20deg;
+  transform: rotate(var(--rotate));
+  top: 150px;
+  right: 450px;
+}
+
+.mental {
+  width: 250px;
+
+  --rotate: -10deg;
+  transform: rotate(var(--rotate));
+  top: 270px;
+  right: 550px;
+}
+
+.kitty {
+  width: 250px;
+
+  --rotate: 15deg;
+  transform: rotate(var(--rotate));
+  top: 250px;
+  right: 100px;
+}
+
+/*-----------------------------------*/
+
+.smash {
+  --rotate: -16deg;
+  transform: rotate(var(--rotate));
+
+  width: 180px;
+
+  top: 75px;
+  right: 60px;
+
+  cursor: pointer;
+  z-index: 8;
+}
+
+.smash-examples {
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.smash-p {
+  position: absolute;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: slideUp 0.5s forwards;
+}
+
+.women {
+  width: 200px;
+
+  --rotate: -20deg;
+  transform: rotate(var(--rotate));
+  top: 30px;
+  right: 250px;
+
+  animation-delay: 0.4s;
+}
+
+.lisa {
+  --rotate: 10deg;
+  transform: rotate(var(--rotate));
+
+  width: 150px;
+
+  top: 320px;
+  right: 100px;
+  animation-delay: 0.2s;
+}
+
+/*-----------------------------------*/
+
+.eco-print {
+  width: 300px;
+  bottom: 135px;
+  right: 30px;
+
+  cursor: pointer;
+  z-index: 8;
+}
+
+.eco-examples {
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.eco {
+  position: absolute;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: slideUp 0.5s forwards;
+}
+
+.syng1 {
+  top: 550px;
+  right: 300px;
+}
+
+.syng2 {
+  top: 800px;
+  right: 30px;
+}
+
+.earth {
+  top: 780px;
+  right: 260px;
+}
+
+.recycle {
+  --rotate: -10deg;
+  transform: rotate(var(--rotate));
+  top: 350px;
+  right: 50px;
 }

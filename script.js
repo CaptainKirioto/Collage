@@ -188,3 +188,53 @@ justin.addEventListener("click", () => {
     });
   }
 });
+
+const friendly = document.querySelector("#friendly");
+const friendlyExamples = document.querySelector("#friendlyExamples");
+
+friendly.addEventListener("click", () => {
+  toggleFocus(friendly, friendlyExamples);
+
+  // Анимация появления поочерёдно
+  if (friendlyExamples.classList.contains("visible")) {
+    const friendItems = friendlyExamples.querySelectorAll(".friend");
+    friendItems.forEach((item, index) => {
+      item.style.animation = "none";
+      void item.offsetWidth; // триггер перезапуска
+      item.style.animation = `slideUp 0.6s ${index * 0.2}s forwards ease-out`;
+    });
+  }
+});
+
+const smash = document.querySelector("#smash");
+const smashExamples = document.querySelector("#smashExamples");
+
+smash.addEventListener("click", () => {
+  toggleFocus(smash, smashExamples);
+
+  // Анимация появления поочерёдно
+  if (smashExamples.classList.contains("visible")) {
+    const friendItems = smashExamples.querySelectorAll(".smash-p");
+    smashItems.forEach((item, index) => {
+      item.style.animation = "none";
+      void item.offsetWidth; // триггер перезапуска
+      item.style.animation = `slideUp 0.6s ${index * 0.2}s forwards ease-out`;
+    });
+  }
+});
+
+const eco = document.querySelector("#eco-print");
+const ecoExamples = document.querySelector("#ecoExamples");
+
+eco.addEventListener("click", () => {
+  toggleFocus(eco, ecoExamples);
+
+  if (ecoExamples.classList.contains("visible")) {
+    const ecoItems = ecoExamples.querySelectorAll(".eco");
+    ecoItems.forEach((item, index) => {
+      item.style.animation = "none";
+      void item.offsetWidth;
+      item.style.animation = `slideUp 0.6s ${index * 0.2}s forwards ease-out`;
+    });
+  }
+});
